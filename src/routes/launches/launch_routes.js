@@ -1,7 +1,9 @@
 const express = require('express')
-const { httpGetAllLaunch,
- httpAddNewLaunch, httpAbortLaunch
- } = require('./launch_controller')
+const {
+ httpGetAllLaunch,
+ httpAddNewLaunch,
+ httpAbortLaunch
+} = require('./launch_controller')
 
 const launchRouter = express.Router()
 
