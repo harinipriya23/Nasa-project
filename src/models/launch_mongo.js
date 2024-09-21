@@ -21,7 +21,7 @@ const launchSchema = new mongoose.Schema({
   // type: mongoose.ObjectId,
   // ref: 'Planets'
   type: String,
-  required: true
+  //required: true
  },
  upcoming: {
   type: Boolean,
@@ -32,7 +32,7 @@ const launchSchema = new mongoose.Schema({
   required: true,
   default: true
  },
- customer: [String]
+ customers: [String]
 
 })
 // the name must be always singular or it 

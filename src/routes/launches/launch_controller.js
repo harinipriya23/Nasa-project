@@ -4,9 +4,15 @@ const {
   existsLaunchWithId,
   abortLaunchById
 } = require('../../models/launch_models')
+const { getPagination } = require('../../services/query')
 
 async function httpGetAllLaunch(req, res) {
-  return res.status(200).json(await getAllLaunch())
+  console.log('httpGetAllLaunch')
+  const { skip, limit } = getPagination(req.query)
+  const launches = await getAllLaunch(skip, limit)
+  // console.log('dfghj')
+  // console.log(launches)
+  return res.status(200).json(launches)
 }
 async function httpAddNewLaunch(req, res) {
   const launch = req.body;
